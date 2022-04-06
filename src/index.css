@@ -1,13 +1,119 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Primary */
+  --cyan: hsl(180, 66%, 49%);
+  --dark-violet: hsl(258, 27%, 26%);
+
+  /* Secondary */
+  --red: hsl(0, 87%, 67%);
+
+  /* Neutral */
+  --gray: hsl(0, 0%, 75%);
+  --grayish-violet: hsl(257, 7%, 63%);
+  --very-dark-blue: hsl(255, 11%, 22%);
+  --very-dark-violet: hsl(260, 8%, 14%);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+img {
+  max-width: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  @apply text-base;
+}
+
+.max-width {
+  @apply px-5 lg:max-w-5xl lg:mx-auto xl:max-w-6xl 2xl:px-0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+  color: var(--very-dark-violet);
+}
+
+p {
+  line-height: 1.8;
+  color: var(--grayish-violet);
+}
+
+button,
+a {
+  user-select: none;
+}
+
+.btn-cta {
+  background-color: var(--cyan);
+  @apply text-white tracking-wider py-2 px-4 text-sm;
+}
+
+.shortener,
+.boost {
+  background-color: var(--dark-violet);
+}
+
+.shortener {
+  height: 175px;
+}
+
+.shortener img {
+  height: 175px;
+}
+
+.cards article img {
+  background-color: hsl(257, 27%, 26%);
+  @apply rounded-full p-3 -mt-12;
+}
+
+.cards article h3 {
+  color: var(--very-dark-blue);
+}
+
+.cards article {
+  position: relative;
+}
+
+.line {
+  @apply absolute left-0 w-full h-2;
+  top: 50%;
+  background-color: var(--cyan);
+}
+
+.boost {
+  height: 275px;
+}
+
+.boost div {
+  height: 275px;
+}
+
+.boost img {
+  height: 275px;
+}
+
+.footer {
+  background-color: var(--very-dark-violet);
+}
+
+@media (min-width: 1024px) {
+  .cards article:nth-child(3) {
+    transform: translateY(2rem);
+  }
+
+  .cards article:nth-child(4) {
+    transform: translateY(4rem);
+  }
 }
